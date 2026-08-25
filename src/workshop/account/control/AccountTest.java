@@ -16,8 +16,14 @@ public class AccountTest {
 	System.out.println("잔액 =" + account.getBalance());
 	
 	
-	Account accoun2 = new Account("A1200", "221-22-3478", 10000);
+	Account account2 = new Account("A1200", "221-22-3478", 10000);
 	
+	
+	//출금
+	account2.withdraw(500000);
+	System.out.println(account2.toString());
 	
 	}
+	
+	
 }

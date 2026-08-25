@@ -27,6 +27,7 @@ public class Account {
 	public String getAcctId() {
 		return acctId;
 	}
+
 	public void setAcctId(String acctId) {
 		this.acctId = acctId;
 	}
@@ -42,8 +43,14 @@ public class Account {
 		this.balance += amount;
 	}
 	//출금
-	public void withraw(int amount) {
+	public void withdraw(int amount) {
 		this.balance -= amount;
+	}
+	@Override
+	public String toString() {
+		return "Account [custId=" + custId + ", "
+				+ "acctId=" + acctId + ", "
+						+ "balance=" + balance + "]";
 	}
 	
 	
