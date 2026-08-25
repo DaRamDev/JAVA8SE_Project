@@ -28,5 +28,11 @@ public class Account {
 	public void deposit(int amount) {
 		this.balance += amount;
 	}
+	//출금
+	public void withraw(int amount) {
+		this.balance -= amount;
 	}
+	
+	
+	
 }
