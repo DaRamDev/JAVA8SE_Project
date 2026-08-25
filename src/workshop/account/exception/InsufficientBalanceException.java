@@ -8,5 +8,10 @@ public class InsufficientBalanceException extends Exception{
 	
 	public InsufficientBalanceException(String errorMessage) {
 		super(errorMessage);
+		this.currentBalance = currentBalance;
+	}
+	
+	public int getCurrentBalance() {
+		return currentBalance;
 	}
 }
