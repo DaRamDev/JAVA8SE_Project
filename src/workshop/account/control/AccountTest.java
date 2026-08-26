@@ -25,8 +25,9 @@ public class AccountTest {
 		//출금
 		account2.withdraw(500000);
 		System.out.println(account2.toString());
+		
 		}catch(InsufficientBalanceException exp) {
-			System.out.println("Error 메세지 " exp.getMessage());
+			System.out.println("Error 메세지 " + exp.getMessage()+ exp.getCurrentBalance());
 		}
 	
 	}
