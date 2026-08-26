@@ -1,4 +1,7 @@
 package chapter1.first;
+
+import java.util.Set;
+
 public class EqualsTest {
     public static void main( String[] args ){
     	
@@ -17,7 +20,14 @@ public class EqualsTest {
             System.out.println( "equalsIgnoreCase test : str1과 st2는 다른 string입니다." );            
         }
     	
-         
+        Set<String> strSet = nes HashSet<>();
+        strSet.add(str1);
+        strSet.add(str2);
+        
+        for(String value : strSet) {
+        	System.out.println(value);
+        }
+        
         MyDate date1 = new MyDate( 6, 9, 2006 );
         MyDate date2 = new MyDate( 6, 9, 2006 );
 
@@ -33,6 +43,10 @@ public class EqualsTest {
         
         System.out.println( date1 );
         System.out.println( date1.toString() );
+        
+        
+        
+        
     }
     
  }
