@@ -30,6 +30,7 @@ public class HelloBeanSpringTest {
 		assertEquals("Hello 생성자", hello.sayHello());
 		assertEquals("Hello 스프링", helloSetter.sayHello());
 		
+		hello.print();
 	}
 	
 }
