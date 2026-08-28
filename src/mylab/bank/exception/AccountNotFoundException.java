@@ -1,5 +1,8 @@
 package mylab.bank.exception;
 
-public class AccountNotFoundException {
-
+// 계좌를 찾을 수 없을 때 발생하는 예외 클래스
+public class AccountNotFoundException extends Exception {
+    public AccountNotFoundException(String message) {
+        super(message);
+    }
 }
