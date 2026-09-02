@@ -1,15 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:context="http://www.springframework.org/schema/context"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<!-- Product 빈 정의 -->
-	<bean id="product1" class="mylab.order.di.xml.Product">
-		<property name="id" value="P001" />
-		<property name="name" value="노트북" />
-		<property name="price" value="1500000" />
-	</bean>
-	
+    <!-- 1. Product1: 수정자(Setter) 주입 -->
+    <bean id="product1" class="main.java.mylab.order.di.xml.Product">
+        <property name="id" value="P001" />
+        <property name="name" value="노트북" />
+        <property name="price" value="150000" />
+    </bean>
+
+    <!-- 2. Product2: 생성자(Constructor) 주입 -->
+    <bean id="product2" class="main.java.mylab.order.di.xml.Product">
+        <constructor-arg value="P002" />
+        <constructor-arg value="스마트폰" />
+        <constructor-arg value="800000" />
+    </bean>
+
+    <!-- 3. ShoppingCart: Setter 주입 (List 형태) -->
+    <bean id="shoppingCart" class="main.java.mylab.order.di.xml.ShoppingCart">
+        <property name="products">
+            <list>
+                <ref bean="product1" />
+                <ref bean="product2" />
+            </list>
+        </property>
+    </bean>
+
+    <!-- 4. OrderService: Setter 주입 (객체 참조) -->
+    <bean id="orderService" class="main.java.mylab.order.di.xml.OrderService">
+        <property name="shoppingCart" ref="shoppingCart" />
+    </bean>
+
 </beans>
